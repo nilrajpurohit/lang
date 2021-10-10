@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        table,th,td{
+            border:black solid 2px;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>CREATED_AT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- track by $index is used to uquinly idetify  -->
+                <tr ng-repeat="x in data track by $index">
+                    <td>{{x.customer_id}}</td>
+                    <td>{{x.customer_name}}</td>
+                    <td>{{x.created_at}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+            var app = angular.module('myApp' , []);
+            app.controller('myCtrl' , function($scope , $http){
+                $scope.data = 'No Data Found'; 
+                $http.get('SQL.php').then(function(res){
+                    $scope.data = res.data.record;
+                },
+                function(res){
+                    console.log('Error');
+                })
+            });
+    </script>
+</body>
+</html>

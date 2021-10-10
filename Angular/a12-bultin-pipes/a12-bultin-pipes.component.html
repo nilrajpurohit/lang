@@ -1,0 +1,36 @@
+<h3>BultIn Pipes : </h3>
+<!-- | symbol is known as pipe not just for angular this is the actual symbol name -->
+<!-- note: pipe is use to change the formate of data just in view, it will not change the actual data for use case -->
+<p>{{name}}</p>
+<p>{{name | lowercase}}</p>
+<p>{{name | uppercase}}</p>
+
+<p>{{title}}</p>
+<p>{{title | titlecase}}</p>
+
+<!-- this will slice the string after 5th index -->
+<p>{{title | slice:5}}</p>
+<!-- this will slice the string after 5th upto 10th index -->
+<p>{{title | slice:5:10}}</p>
+
+<!-- this will work on for object data -->
+<p>{{data | json}}</p>
+
+<p>{{number}}</p>
+<!-- berfore decimal one digit after decimal 2 to 3 digit -->
+<p>{{number | number:'1.2-3'}}</p>
+<!-- berfore decimal two digit after decimal 3 to 4 digit -->
+<p>{{number | number:'2.3-4'}}</p>
+<!-- berfore decimal three digit after decimal 1 to 2 digit -->
+<p>{{number | number:'3.1-2'}}</p>
+
+<p>{{number | percent}}</p>
+<p>{{number | currency}}</p>
+<p>{{number | currency:'EUR':'code'}}</p>
+
+
+<p>{{date}}</p>
+<!-- types: short,long,medium -->
+<p>{{date | date:'short'}}</p>
+<p>{{date | date:'shortDate'}}</p>
+<p>{{date | date:'shortTime'}}</p>

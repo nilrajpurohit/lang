@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- An AngularJS module defines an application.
+    The module is a container for the different parts of an application.
+    The module is a container for the application controllers.
+    Controllers always belong to a module. -->
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        {{fname + " " + lname}}
+    </div> -->
+
+    <div ng-app="myApp" my-directive>
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp' , []);
+        app.controller('myCtrl' , function($scope){
+            $scope.fname = "Nil";
+            $scope.lname = "Rajpurohit";
+        });
+
+        app.directive('myDirective' , function(){
+            return{
+                template : "I was made in a directive construct !"
+            };
+        })
+    </script>
+</body>
+</html>

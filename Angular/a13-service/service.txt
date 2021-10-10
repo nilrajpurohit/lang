@@ -1,0 +1,18 @@
+1.Service is a class which help to share same functionality,data,logic into multiple component.
+
+2.Without service we can do by creating an object of a component but this is not reflexiable i.e after 
+sometime that class take paramenter then you have to change in every file where you create an object of that class.
+
+3.By service in angular you can override with parameter, means nothing to do with parameter.
+
+4.Service have an @Injectable() decorate to make that service class accessable to other class,
+Without Injectable that class will become an normal ts class.(have to create object every time).
+
+5.Service can be inject in module or component.
+but if you inject sevice in child compo then that service will only accessable to child's child compo
+not to child's parent compo.
+
+so the place is appCompo i.e root component to get accessable for all child component under that.
+
+but the best place is to inject in appModule because your application start from that place i.e (RootModule).
+under provider array.

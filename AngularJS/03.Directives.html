@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body  ng-app="myApp">
+    <div ng-init="quantity=5; cost=10; names=['Jani','Hege','Kai'];">
+        <!-- ng-model is use to binding the data -->
+        <span>Quantity : </span>    <input type="text" ng-model="quantity"> <br>
+        <span>Cost : </span>    <input type="text" ng-model="cost"> <br>
+        <h4>{{quantity * cost}}</h4>
+
+        <ul>
+            <!-- ng-repeat directive work like foreach -->
+            <li ng-repeat="x in names">
+                {{x}}
+            </li>
+        </ul>
+
+        <my-directive></my-directive>
+
+    </div>
+
+    <script>
+        var app = angular.module("myApp" , []);
+        
+        app.directive('myDirective' , function(){
+            return{
+                template : "<h4>Made by a directive !</h4>"
+            };
+        });
+    </script>
+</body>
+</html>

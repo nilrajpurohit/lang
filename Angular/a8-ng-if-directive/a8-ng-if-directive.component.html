@@ -1,0 +1,28 @@
+<h2>Structural Directives : </h2>
+<h3>ngIf Directive : </h3>
+<p *ngIf="false">Basic ngIf with boolean value</p>
+
+<p *ngIf="isTrue">Property Binding ngIf</p>
+
+
+
+<!-- ngif else -->
+<!-- in this else is keyword, elseBlock is an Template Reference which just to show where to redirect if its come to else -->
+<p *ngIf="!isTrue; else elseBlock">This is an ngIf block</p>
+
+<ng-template #elseBlock>
+  <p>This is an else Template Reference Block</p>
+</ng-template>
+
+
+
+<!-- ngif then else -->
+<p *ngIf="isTrue; then thenBlock; else elseBlock"></p>
+
+<ng-template #thenBlock>
+  <p>This is an ngIf Then block</p>
+</ng-template>
+
+<ng-template #elseBlock>
+  <p>This is an else Template Reference Block</p>
+</ng-template>

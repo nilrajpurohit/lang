@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <!-- This is an Angular Events Example -->
+        <h4>{{name}}</h4>
+        <h4 ng-mouseover="count = count + 1">Count : {{count}}</h4>
+        <button ng-click="count = count + 1">Count : {{count}}</button>
+
+        <button ng-click="myShow()">Show</button>
+        <ul ng-show="showData">
+            <li>Nil Rajpurohit</li>
+            <li>Hemant Chastave</li>
+            <li>Nikul Bhavsar</li>
+            <li>Aayush Chabbra</li>
+        </ul>
+
+        <div ng-mousemove="myPosition($event)">
+            <h2>Mouse X-Position : {{x_axis}}</h2>
+            <h2>Mouse Y-Position : {{y_axis}}</h2>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module('myApp' , []);
+        app.controller('myCtrl' , function($scope){
+            $scope.name = "Nil Rajpurohit";
+            $scope.count = 0;
+            $scope.showData = true;
+            $scope.myShow = function(){
+                return $scope.showData = !$scope.showData;
+            }
+            $scope.myPosition = function(e){
+                $scope.x_axis = e.clientX;
+                $scope.y_axis = e.clientY;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+    <!-- This is an Services Exmaple  -->
+        <h2>{{myUrl}}</h2>
+        <h4>{{myExpression}}</h4>
+        <h3>{{myTimeout}}</h3>
+        <h3>{{myInterval}}</h3>
+        <h3>{{hex}}</h3>
+
+        <ul>
+            <li ng-repeat="x in counts">
+                {{x | myFormat}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var app=angular.module('myApp' , []);
+
+          //Creating own service in angular.
+        app.service('hexify' , function(){
+            this.myFun = function(x){
+                return x.toString(16);
+            }
+        });
+
+        //creating own filter..
+        app.filter('myFormat' , ['hexify' , function(hexify){
+            return function(x){
+                return hexify.myFun(x);
+            }
+        }])
+
+        app.controller('myCtrl',function($scope , $location , $http , $timeout ,$interval ,hexify){
+            // $scope.name = "Nil Rajpurohit";
+            // $location is an built in service of angular 
+            $scope.myUrl = $location.absUrl();
+        
+            // $location is an built in service of angular
+            // in this 01.Expression.html is an html file located in same folder we fetch that data as a response and store it into a variable.
+            //get() is a function which take a parameter like a path or url or file
+            //then() is a function nested after get function for take the response an process it. 
+            $http.get('01.Expression.html').then(function(response){
+                $scope.myExpression = response.data;
+            })
+
+            //$timeout is a service as like setTimeout function in javscript.
+            //$timeout take two parameter i.e callback function and a time in millisecond.
+            $scope.myTimeout = "Hello, how are you ?";
+            $timeout(function(){
+                $scope.myTimeout = "How are you today ?";
+            } , 3000);
+
+            //$interval is a service as like setInterval function in javscript.
+            //$interval take two parameter i.e callback function and a time in millisecond.
+            $scope.myInterval = new Date().toLocaleTimeString();
+            $interval(function(){
+                $scope.myInterval = new Date().toLocaleTimeString();
+            },1000);
+
+            //using own service which is created below
+            $scope.hex = hexify.myFun(255);
+            $scope.counts = [16 , 3, 5 , 7 ,10 ,12 ,15];
+        });
+    </script>
+</body>
+</html>

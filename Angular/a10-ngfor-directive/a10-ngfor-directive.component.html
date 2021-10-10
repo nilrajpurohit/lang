@@ -1,0 +1,23 @@
+<h3>NgFor Directive : </h3>
+<!-- kind of normal for loop  -->
+<p *ngFor="let color of colors;">{{color}}</p>
+
+<h4>For loop with index attribute:</h4>
+<!-- for loop with index -->
+<p *ngFor="let color of colors; index as i">{{i}} - {{color}}</p>
+
+<h4>For loop with first attribute:</h4>
+<!-- for loop with if that was first element then return true other false -->
+<p *ngFor="let color of colors; first as f">{{f}} - {{color}}</p>
+
+<h4>For loop with last attribute:</h4>
+<!-- for loop with if that was last element then return true other false -->
+<p *ngFor="let color of colors; last as l">{{l}} - {{color}}</p>
+
+<h4>For loop with odd attribute:</h4>
+<!-- for loop with if that was odd element then return true other false -->
+<p *ngFor="let color of colors; odd as o">{{o}} - {{color}}</p>
+
+<h4>For loop with last attribute:</h4>
+<!-- for loop with if that was even element then return true other false -->
+<p *ngFor="let color of colors; even as e">{{e}} - {{color}}</p>

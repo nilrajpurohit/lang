@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <!-- ng-app is an strating point of angular application means it is an entry point -->
+    <!-- every direvtives of angularjs starts with ng -->
+    <div ng-app="" ng-init="firstName='Nilesh'">
+       
+        <!-- ng-model is an  directive, work with HTML controls to bind the value of it (input , select , textarea)-->
+        <input type="text" ng-model="name">
+        
+        <!-- {{ }} this is expression to show value of binded variable like 'name' or to output the operation under the expression -->
+        <h1>Hello {{firstName}}</h1>
+        <h3>{{ 5 + 5 }}</h3>
+        
+        <!-- this is another way to show data of binded variable by using ng-bind='name_of_variable' -->
+        <h1 ng-bind="firstName"></h1>
+        
+        <!-- alternative for ng that is data-ng which valid for HTML  -->
+        <h1 data-ng-bind="firstName"></h1>
+
+        <!-- Modules and Controller -->
+        <!-- modules define angularjs application  -->
+        <!-- controllers control angularjs application  -->
+
+        </div>
+</body>
+</html>

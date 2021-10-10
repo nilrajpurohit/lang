@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    
+    <!-- to make routing your application must include this library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <p><a href="#/!">Main</a></p>
+        <a href="#!Model">Model</a>
+        <a href="#!Directives">Directives</a>
+
+        <!-- ng-view is a directive which is use to view the application component -->
+        <!-- ng-view is neccessary for route to view the file  -->
+        <div ng-view>
+
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module('myApp' , ['ngRoute']);
+        app.config(function($routeProvider){
+            $routeProvider.when("/" , {
+                templateUrl : "01.Expression.html"
+            })
+            .when("/Model" , {
+                templateUrl : "04.Model.html"
+            })
+            .when("/Directives", {
+                templateUrl : "03.Directives.html"
+            });
+        });
+    </script>
+</body>
+</html>

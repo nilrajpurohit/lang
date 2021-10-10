@@ -1,0 +1,16 @@
+<h3>Class Binding : </h3>
+
+<!-- simple class name  -->
+<p class="text-success">Style by basic class apply.</p>
+
+<!-- class Binding -->
+<p [class]="successClass">Style by class binding.</p>
+
+<!-- data Binding -->
+<p class="{{successClass}}">Style by data binding.</p>
+
+<!-- single class binding on condition -->
+<p [class.text-success]="isSuccess"> single class binding on condition.</p>
+
+<!-- multiple class binding on condition -->
+<p [class]="applyMultipleClass">Multiple class binding on condition.</p>

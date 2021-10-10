@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        table,th,td{
+            border : 2px solid black;
+        }
+    </style>
+</head>
+<body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <h4>{{name}}</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>INDEX</th>
+                        <th>NAME</th>
+                        <th>COUNTRY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in names | orderBy:'name'">
+                        <td ng-if="$odd" style="background:#f1f1f1;">{{$index + 1}}</td>
+                        <td ng-if="$even" style="background:#ffffff;">{{$index + 1}}</td>
+                        <td ng-if="$odd" style="background: #f1f1f1;">{{x.name}}</td>
+                        <td ng-if="$even" style="background:#ffffff;">{{x.name}}</td>
+                        <td ng-if="$odd" style="background:#f1f1f1;">{{x.country}}</td>
+                        <td ng-if="$even" style="background:#ffffff;">{{x.country}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+<script>
+    var app = angular.module('myApp' , []);
+    app.controller('myCtrl' , function($scope){
+        $scope.name = "Nil Rajpurohit";
+        $scope.names = [{name : "Nil Rajpurohit" , country : "India"}, 
+                        {name : "Sam parker" , country : "USA"},
+                        {name : "Usain Bolt" , country : "Africa"},
+                        {name : "Hemant Chastave" , country : "India"}];
+    });
+</script>
+</html>

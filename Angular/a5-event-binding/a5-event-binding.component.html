@@ -1,0 +1,12 @@
+<h3>Event Binding : </h3>
+
+<!-- Event Binding can be perform in round brackets () -->
+<button (click)="onClick()">click</button>
+
+<button (click)="onClick2()">click</button>
+
+<!-- $event is an event implicit object in angular -->
+<button (click)="onClick3($event)">click</button>
+
+<!-- assignment by event without calling function -->
+<button (click)="data='Hell !'">click</button>

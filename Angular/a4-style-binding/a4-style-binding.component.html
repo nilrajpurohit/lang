@@ -1,0 +1,16 @@
+<h3>Style Binding : </h3>
+
+<!-- basic style apply -->
+<p style="color:blue">This is basic style apply.</p>
+
+<!-- style Binding -->
+<p [style]="successColor">This is style binding.</p>
+
+<!-- style Binding with property-->
+<p [style.color]="successColorApply">This is style binding with property.</p>
+
+<!-- style Binding with property on condition -->
+<p [style.color]="isSuccess ? 'green' : 'red' ">This is conditionaly single style binding with property.</p>
+
+<!-- for apply multiple style properties have to use directive called ngStyle -->
+<p [ngStyle]="multipleStyle">Multiple Style Property By ngStyle directive.</p>

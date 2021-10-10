@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <!-- ng-options is a directive which is use to set the option under for select form control  -->
+        <select name="names" ng-model="selectedName"  id="names" ng-options="x for x in names">
+            <option value="">Select All</option>
+        </select>
+
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp' , []);
+        app.controller('myCtrl' , function($scope){
+            $scope.names = ['Nil' , 'Hemant' , 'Nikul' ,'Aayush'];
+        });
+    </script>
+</body>
+</html>

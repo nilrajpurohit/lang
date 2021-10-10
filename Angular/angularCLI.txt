@@ -1,0 +1,43 @@
+To install Angular cli required node and npm...
+> npm install -g @angular/cli (-g is for global means install only once and use in many applications).
+
+
+
+
+Angular cli commands...
+1. To create a new project/application..
+    > ng new app-name (app name must be in small case)
+
+    note: There are many other way you can create project/application(checkout angular offical docs),
+    but this is a basic command.
+    so when you create project it will ask you question like needed to instal angular router and 
+    which design script to install like sass,scss,css.
+
+2. To run your project on browser..
+    > ng serve
+    OR
+    > npm start
+
+    note:There are more way to run a project,but this is the basic ways
+    npm start internally invoke ng serve that angular cli command.
+
+3. To create new Component in angular
+    > ng generate component <component-name>
+        or
+    > ng g c <component-name>
+
+    note: this command will only create components not module.
+            it will create four file under a single folder name same as your component name, this folder will be 
+            located under app folder.
+            
+            1. .html
+            2. .sccs
+            3. ts
+            4. .spec.ts (for testing purpose)
+
+4. To create a new service in angular
+    > ng generate service <service-name>
+    or
+    >ng g s <service-name>
+
+    note:This command will just create a servcie.ts, service.spec.ts file, only files.

@@ -1,0 +1,31 @@
+[{
+    "id": 1,
+    "name": "Nil Rajpurohit",
+    "dep": "Web Development",
+    "sal": 15000
+  },
+  {
+    "id": 2,
+    "name": "Nikul Bhavsar",
+    "dep": "Web Design",
+    "sal": 25000
+  },
+  {
+    "id": 3,
+    "name": "Hemant Chastave",
+    "dep": "Mobile App Development",
+    "sal": 25000
+  },
+  {
+    "id": 4,
+    "name": "Aayush Chabbra",
+    "dep": "Brand Ambsitter",
+    "sal": 50000
+  },
+  {
+    "id": 5,
+    "name": "Yogita Kyatam",
+    "dep": "Full Stack",
+    "sal": 40000
+  }
+]

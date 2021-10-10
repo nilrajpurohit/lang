@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- for animation in angular must needed to include this library. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+    <style>
+        .div2 {
+            transition: all linear 0.5s;
+            background-color: lightblue;
+            height: 100px;
+            width: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .ng-hide {
+            height: 0;
+            width: 0;
+            background-color: transparent;
+            top:-200px;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+        <div ng-app="myApp">
+            <!-- This is Animation in Agular Example -->
+            <!-- An animation is when the transformation of an HTML element gives you an illusion of motion. -->
+            <h1>Hide the DIV: <input type="checkbox" ng-model="myCheck"></h1>
+
+            <!-- The directives in AngularJS who add/remove classes are:
+                ng-show
+                ng-hide
+                ng-class
+                ng-view
+                ng-include
+                ng-repeat
+                ng-if
+                ng-switch -->
+
+                <!-- Example: the ng-hide directive will add these class values:
+                ng-animate
+                ng-hide-animate
+                ng-hide-add (if the element will be hidden)
+                ng-hide-remove (if the element will be showed)
+                ng-hide-add-active (if the element will be hidden)
+                ng-hide-remove-active (if the element will be showed) -->
+
+            <div class='div2' ng-hide="myCheck"></div>
+        </div>
+
+        <script>
+            var app = angular.module('myApp' , ['ngAnimate']);
+        </script>
+</body>
+</html>

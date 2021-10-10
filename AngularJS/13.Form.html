@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <form action="null" method="POST">
+            <!-- user is an object which have name,address and date of birth  -->
+            <input type="text" name="name" ng-model="user.name" placeholder="Your Name">
+            <input type="text" name="address" ng-model="user.address" placeholder="Your Address">
+            <input type="date" name="dob" ng-model="user.dob">
+
+            <!-- reset() function is under controller to reset the value into the field  -->
+            <button type="button" ng-click="reset()">reset</button>
+
+            <!-- update() function is under controller to save the data or value of the field in another value -->
+            <button type="button" ng-click="update(user)">save</button>
+        </form>
+
+        <pre>user = {{user | json}}</pre>
+        <pre>master = {{master | json}}</pre>
+    </div>
+
+<script>
+    var app = angular.module('myApp' , []);
+    app.controller('myCtrl' , function($scope){
+        $scope.master = {};
+        $scope.update = function(user){
+            // angular.copy is an function to copy the data 
+            $scope.master = angular.copy($scope.user);
+        };
+        $scope.reset = function(){
+            $scope.user = angular.copy($scope.master)
+        }
+    })
+</script>
+</body>
+</html>

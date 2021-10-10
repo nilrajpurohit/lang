@@ -1,0 +1,10 @@
+<h3>Component Interaction : </h3>
+<h4>Parent Compo--</h4>
+<!-- childData is variable passed by child component through an eventemitter but we have to
+    declare this variable under parent component -->
+<h4>{{childData}}</h4>
+
+
+<!-- for passing name variable data from parent to child -->
+<!-- for passing data from child to parent we have binded childEvent which is under child compo -->
+<app-child-compo (childEvent)="childData=$event" [parentData]="name"></app-child-compo>

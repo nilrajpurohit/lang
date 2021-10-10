@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onLoad="loadData()">
+    <h1 class="main"></h1>
+</body>
+<script>
+function loadData(){
+    var object = {
+        name : "Nil rajpurohit",
+        address : "Ahmednagar",
+        bod : "19-Aug-1999",
+        gender : "male"
+    }
+    try{
+        var stringify = JSON.stringify(object);
+        var json = JSON.parse(stringify);
+        console.log(json);
+    }
+    catch(e){
+        console.log(e);
+    }
+    var main = document.querySelector(".main");
+    main.insertAdjacentHTML( 'beforeEnd' , stringify);
+}
+</script>
+</html>
