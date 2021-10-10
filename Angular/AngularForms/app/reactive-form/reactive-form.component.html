@@ -1,0 +1,66 @@
+<div class="container">
+  <h3>Registration Form</h3>
+  <form [formGroup]="registrationForm">
+    <div class="form-group">
+      <label>Username</label>
+      <input [class.is-invalid]="registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched"
+        formControlName="username" type="text" class="form-control">
+      <div *ngIf="registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched">
+        <small *ngIf="registrationForm.get('username')?.errors?.required" class="text-danger">Username
+          is
+          required</small>
+        <small *ngIf="registrationForm.get('username')?.errors?.minlength" class="text-danger">Name lenght
+          must be
+          greater then 3</small>
+        <small *ngIf="registrationForm.get('username')?.errors?.ForbiddenName" class="text-danger">
+          {{registrationForm.get('username')?.errors?.ForbiddenName.value}}
+          Username not allowed
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input [class.is-invalid]="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched"
+        formControlName="password" type="password" class="form-control">
+      <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+        <small *ngIf="registrationForm.get('password')?.errors?.required" class="text-danger">Confirm Password
+          is
+          required</small>
+        <small *ngIf="registrationForm.get('password')?.errors?.minlength" class="text-danger">Password lenght
+          must be
+          greater then 6</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input [class.is-invalid]="registrationForm.errors?.misMatch" formControlName="confirmPassword" type="password"
+        class="form-control">
+      <small *ngIf="registrationForm.errors?.misMatch" class="text-danger">Confirm Password
+        Not Match</small>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <button class="btn btn-secondary btn-sm m-2" (click)="addEmailField()">Add Email</button>
+      <button class="btn btn-secondary btn-sm m-2" (click)="removeEmailField()">Remove Email</button>
+      <input [class.is-invalid]="registrationForm.get('email')?.errors?.required" formControlName="email" type="email"
+        class="form-control">
+      <small class="text-danger" *ngIf="registrationForm.get('email')?.errors?.required">Email is required</small>
+      <div formArrayName="alternateEmails" *ngFor="let email of alternateEmails.controls; let i=index">
+        <input type="text" class="form-control my-1" [formControlName]="i">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" id="subscribe" class="form-check-intput m-2" formControlName="subscribe">
+      <label class="form-check-label" for="subscribe">Offers Promotional</label>
+    </div>
+
+    <button class="btn btn-primary m-2">Register</button>
+    <button (click)="loadData()" class="btn btn-primary m-2">Load Data</button>
+  </form>
+
+  {{registrationForm.value | json}}
+</div>

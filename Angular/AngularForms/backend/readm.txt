@@ -1,0 +1,1 @@
+Before Starting server npm init command use to install basic requirements.

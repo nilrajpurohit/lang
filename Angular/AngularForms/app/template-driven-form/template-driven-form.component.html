@@ -1,0 +1,77 @@
+<!-- This is an Template Driven Form (TDF).  -->
+<div class="container">
+
+  <!-- {{userForm.value | json }}
+  <hr>
+  {{userModel | json}} -->
+  <div class="alert alert-danger" *ngIf="errorMsg">
+    {{errorMsg}}
+  </div>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required #name="ngModel"
+        [class.is-invalid]="name.invalid && name.touched" class="form-control" [(ngModel)]="userModel.name">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required #email="ngModel"
+        [class.is-invalid]="email.invalid && email.touched" class="form-control" [(ngModel)]="userModel.email">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" pattern="^\d{10}$" #phone="ngModel" class="form-control"
+        [class.is-invalid]="phone.invalid && phone.touched" [(ngModel)]="userModel.phone">
+    </div>
+
+    <!-- ngModelGroup -->
+    <!-- <div ngModelGroup="address">
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="tel" id="street" name="street" class="form-control" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="tel" id="city" name="city" class="form-control" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="tel" id="state" name="state" class="form-control" ngModel>
+      </div>
+    </div> -->
+
+    <div class="form-group">
+      <label for="topic">Topics : </label><br>
+      <select name="topic" id="topic" name="topic" required #topic="ngModel" class="form-select"
+        [class.is-invalid]="topicHasError && topic.touched" (blur)="validateTopic(topic.value)"
+        (change)="validateTopic(topic.value)" [(ngModel)]="userModel.topic">
+        <option value="" selected>Im intrested in : </option>
+        <option *ngFor="let topic of topics" value={{topic.name}}>{{topic.name}}</option>
+      </select>
+    </div>
+
+    <div>
+      <label> Time Prefernce : </label>
+      <div class="form-check">
+        <input class="form-check-intput" type="radio" name="timePreference" value="morning"
+          [(ngModel)]="userModel.timePreference">
+        <label class="form-check-label">Morning (9AM - 12PM)</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-intput" type="radio" name="timePreference" value="evening"
+          [(ngModel)]="userModel.timePreference">
+        <label class="form-check-label">Evening (5PM - 8PM)</label>
+      </div>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-intput" name="offersNotice" type="checkbox" [(ngModel)]="userModel.offersNotice">
+      <label class="form-check-label">
+        Send me promtional offers
+      </label>
+    </div>
+    <button class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+  </form>
+</div>
