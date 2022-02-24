@@ -1,0 +1,57 @@
+body,
+html {
+    height: 100%;
+    background: rgb(70, 0, 70);
+    /* background: linear-gradient(to right bottom, rgb(53, 0, 53) 20%, rgb(121, 0, 121)); */
+}
+
+.masthead-brand>a {
+    text-decoration: none;
+}
+
+.blog-container {
+    margin-top: 100px;
+}
+
+.blog-container>h4 {
+    font-weight: 700;
+    padding: 15px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid white;
+}
+
+#container_ {
+    animation-name: blink;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+}
+
+/* .blog-contents {} */
+
+.blog-contents>.blog-title {
+    padding: 20px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.123);
+    text-shadow: 2px 2px 5px black;
+}
+
+.blog-contents>.blog-description {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.37);
+    /* border-bottom: 2px solid white; */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
