@@ -1,0 +1,15 @@
+D:\Studies\Practice\Lang\c#\ClassObject\obj\Debug\net6.0\ClassObject.csproj.AssemblyReference.cache
+D:\Studies\Practice\Lang\c#\ClassObject\obj\Debug\net6.0\ClassObject.GeneratedMSBuildEditorConfig.editorconfig
+D:\Studies\Practice\Lang\c#\ClassObject\obj\Debug\net6.0\ClassObject.AssemblyInfoInputs.cache
+D:\Studies\Practice\Lang\c#\ClassObject\obj\Debug\net6.0\ClassObject.AssemblyInfo.cs
+D:\Studies\Practice\Lang\c#\ClassObject\obj\Debug\net6.0\ClassObject.csproj.CoreCompileInputs.cache
+D:\Studies\Practice\Lang\c#\ClassObject\bin\Debug\net6.0\ClassObject.exe
+D:\Studies\Practice\Lang\c#\ClassObject\bin\Debug\net6.0\ClassObject.deps.json
+D:\Studies\Practice\Lang\c#\ClassObject\bin\Debug\net6.0\ClassObject.runtimeconfig.json
+D:\Studies\Practice\Lang\c#\ClassObject\bin\Debug\net6.0\ClassObject.dll
+D:\Studies\Practice\Lang\c#\ClassObject\bin\Debug\net6.0\ClassObject.pdb
+D:\Studies\Practice\Lang\c#\ClassObject\obj\Debug\net6.0\ClassObject.dll
+D:\Studies\Practice\Lang\c#\ClassObject\obj\Debug\net6.0\refint\ClassObject.dll
+D:\Studies\Practice\Lang\c#\ClassObject\obj\Debug\net6.0\ClassObject.pdb
+D:\Studies\Practice\Lang\c#\ClassObject\obj\Debug\net6.0\ClassObject.genruntimeconfig.cache
+D:\Studies\Practice\Lang\c#\ClassObject\obj\Debug\net6.0\ref\ClassObject.dll
