@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Studies\\Practice\\c#\\Program\\Program.csproj",
+      "projectUniqueName": "D:\\Studies\\Practice\\Lang\\c#\\Program\\Program.csproj",
       "projectName": "Program",
-      "projectPath": "D:\\Studies\\Practice\\c#\\Program\\Program.csproj",
+      "projectPath": "D:\\Studies\\Practice\\Lang\\c#\\Program\\Program.csproj",
       "packagesPath": "C:\\Users\\MaFiA\\.nuget\\packages\\",
-      "outputPath": "D:\\Studies\\Practice\\c#\\Program\\obj\\",
+      "outputPath": "D:\\Studies\\Practice\\Lang\\c#\\Program\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MaFiA\\AppData\\Roaming\\NuGet\\NuGet.Config",
