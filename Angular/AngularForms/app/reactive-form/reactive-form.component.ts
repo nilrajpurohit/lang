@@ -43,6 +43,7 @@ export class ReactiveFormComponent implements OnInit {
   removeEmailField(){
     this.alternateEmails.clear();
   }
+  
   //This is FormGroup and FormControl
   // registrationForm = new FormGroup({
   //   username : new FormControl('Nil'),
